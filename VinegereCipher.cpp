@@ -3,6 +3,7 @@
 #include "VinegereCipher.h"
 #include "matrixOperations.h"
 #include "stringFormating.h"
+#include "global.h"
 
 void encryptVigenereCipher(char* text, char* key)
 {
@@ -16,22 +17,21 @@ void encryptVigenereCipher(char* text, char* key)
 	{
 		if (keyIndex >= keySize)
 			keyIndex = 0;
-		text[textIndex] = encryptChar_RetChar(text[textIndex], key[keyIndex]);
+		text[textIndex] = encryptChar(text[textIndex], key[keyIndex]);
 	}
 }
 
-char encryptChar_RetChar(char textChar, char keyChar)
+char encryptChar(char textChar, char keyChar)
 {
-	char** alfabetMatrix = nullptr;
-	alfabetMatrix = allocMatrixOfChar_RetPtr(26, 26);
+	char** alfabetMatrix = allocMatrixOfChar(alphabetLength, alphabetLength);
 	createVigenereAlfabetMatix(alfabetMatrix);
 
-	int valueTextCharCoordinate = setValueOfCoordinate_RetCoord(textChar);
-	int valueKeyCharCoordinate = setValueOfCoordinate_RetCoord(keyChar);
+	int textCharCoordinate = calculateAplhabetCoord(textChar);
+	int keyCharCoordinate = calculateAplhabetCoord(keyChar);
 
-	char relevantChar = alfabetMatrix[valueTextCharCoordinate][valueKeyCharCoordinate];
+	char relevantChar = alfabetMatrix[textCharCoordinate][keyCharCoordinate];
 
-	alfabetMatrix = freeMatrixOfChar_RetNullptr(alfabetMatrix, 26);
+	freeMatrixOfChar(alfabetMatrix, alphabetLength);
 
 	return relevantChar;
 
@@ -39,23 +39,22 @@ char encryptChar_RetChar(char textChar, char keyChar)
 
 void createVigenereAlfabetMatix(char** alfabetMatrix)
 {
-	for (int i = 0; i < 26; i++)
+	for (int i = 0; i < alphabetLength; i++)
 	{
-		for (int j = 0; j < 26; j++)
+		for (int j = 0; j < alphabetLength; j++)
 		{
 			if (alfabetMatrix)
 			{
-				char revelantChar = (j + i) % 26 + 'A';
+				char revelantChar = (j + i) % alphabetLength + firstAlfabetUpperLetter;
 				alfabetMatrix[i][j] = revelantChar;
 			}
 		}
 	}
 }
 
-int setValueOfCoordinate_RetCoord(char argChar)
+int calculateAplhabetCoord(char argChar)
 {
-	int coord = (argChar - 'A') % 26;
-	return coord;
+	return (argChar - firstAlfabetUpperLetter) % alphabetLength;
 }
 
 void decryptVingereCipher(char* text, char* key)
@@ -70,23 +69,22 @@ void decryptVingereCipher(char* text, char* key)
 	{
 		if (keyIndex >= keySize)
 			keyIndex = 0;
-		text[textIndex] = decryptChar_RetChar(text[textIndex], key[keyIndex]);
+		text[textIndex] = decryptChar(text[textIndex], key[keyIndex]);
 	}
 
 
 }
 
-char decryptChar_RetChar(char textChar, char keyChar)
+char decryptChar(char textChar, char keyChar)
 {
-	int valueKeyCharCoordinate = setValueOfCoordinate_RetCoord(keyChar);
+	
+	int valueKeyCharCoordinate = calculateAplhabetCoord(keyChar);
 	int differenceBetwenTextCharKeyChar = textChar - keyChar;
 
 	if (differenceBetwenTextCharKeyChar < 0)
-		differenceBetwenTextCharKeyChar += 26;
+		differenceBetwenTextCharKeyChar += alphabetLength;
 
-	char relevantChar = 'A' + differenceBetwenTextCharKeyChar;
-
-	return relevantChar;
+	return  firstAlfabetUpperLetter + differenceBetwenTextCharKeyChar;
 }
 
 

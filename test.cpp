@@ -2,13 +2,14 @@
 #include <cstring>
 #include "matrixOperations.h"
 #include "VinegereCipher.h"
+#include "global.h"
 
 void test_allocMatrixOfChar_createVigenerateAlfabet()
 {
-	char** matrix = allocMatrixOfChar_RetPtr(26, 26);
+	char** matrix = allocMatrixOfChar(26, 26);
 	createVigenereAlfabetMatix(matrix);
 	printMatrixOfChar(matrix, 26, 26);
-	matrix = freeMatrixOfChar_RetNullptr(matrix, 26);
+	matrix = freeMatrixOfChar(matrix, 26);
 }
 
 void test_encryptVigenereCipher()
@@ -22,14 +23,14 @@ void test_encryptVigenereCipher()
 
 }
 
-void test_encryptChar_RetChar()
+void test_encryptChar()
 {
-	printf(" %c", encryptChar_RetChar('a', 'a'));
+	printf(" %c", encryptChar('a', 'a'));
 }
 
 void test_setValueOfCoordinate_RetCoord()
 {
-	int test_int = setValueOfCoordinate_RetCoord('K');
+	int test_int = calculateAplhabetCoord('K');
 	printf(" %d", test_int);
 }
 
@@ -53,7 +54,7 @@ void test_encryptDecryptVignereCipher()
 	printf("Enter key: ");
 	fflush(stdin);
 	gets_s(key);
-	
+
 	printf("Oryginal: %s\n", text);
 
 	encryptVigenereCipher(text, key);
@@ -63,7 +64,7 @@ void test_encryptDecryptVignereCipher()
 
 	decryptVingereCipher(text, key);
 	printf("Decrypted by key: %s\n", text);
-	
+
 	printf("Enter new key: ");
 	fflush(stdin);
 	gets_s(newKey);
@@ -71,6 +72,9 @@ void test_encryptDecryptVignereCipher()
 	decryptVingereCipher(tmpText, newKey);
 	printf("Decrypted by new key: %s\n", tmpText);
 
+}
 
-
+void test_global()
+{
+	printf("%c %d", firstAlfabetUpperLetter, alphabetLength);
 }

@@ -3,7 +3,7 @@
 
 using namespace std;
 
-char** allocMatrixOfChar_RetPtr(int width, int height)
+char** allocMatrixOfChar(int width, int height)
 {
 	char** matrix = new char* [height];
 	for (int i = 0; i < height; i++)
@@ -14,7 +14,7 @@ char** allocMatrixOfChar_RetPtr(int width, int height)
 
 }
 
-char** freeMatrixOfChar_RetNullptr(char** matrix, int height)
+char** freeMatrixOfChar(char** matrix, int height)
 {
 	for (int i = 0; i < height; i++)
 	{

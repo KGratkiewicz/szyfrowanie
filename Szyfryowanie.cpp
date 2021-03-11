@@ -4,6 +4,5 @@
 int main()
 {
     test_encryptDecryptVignereCipher();
-
     return 0;
 }

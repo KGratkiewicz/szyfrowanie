@@ -1,5 +1,2 @@
-﻿  Szyfryowanie.cpp
-  test.cpp
-  VinegereCipher.cpp
-  Generowanie kodu...
+﻿  shiftCipher.cpp
   Szyfryowanie.vcxproj -> D:\Visual Studio\repos D\Krypto\Szyfryowanie\Debug\Szyfryowanie.exe

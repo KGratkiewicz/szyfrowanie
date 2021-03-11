@@ -147,6 +147,7 @@
     <ClCompile Include="VinegereCipher.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="global.h" />
     <ClInclude Include="matrixOperations.h" />
     <ClInclude Include="shiftCipher.h" />
     <ClInclude Include="stringFormating.h" />
