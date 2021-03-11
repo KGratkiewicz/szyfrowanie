@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstring>
 #include "matrixOperations.h"
-#include "VinegereChiper.h"
+#include "VinegereCipher.h"
 
 void test_allocMatrixOfChar_createVigenerateAlfabet()
 {
@@ -11,12 +11,12 @@ void test_allocMatrixOfChar_createVigenerateAlfabet()
 	matrix = freeMatrixOfChar_RetNullptr(matrix, 26);
 }
 
-void test_encryptVigenereChiper()
+void test_encryptVigenereCipher()
 {
 	char text[] = "ABCDABCDABCD";
 	char key[] = "abcd";
 	
-	encryptVigenereChiper(text, key);
+	encryptVigenereCipher(text, key);
 
 	printf(text);
 
@@ -33,18 +33,18 @@ void test_setValueOfCoordinate_RetCoord()
 	printf(" %d", test_int);
 }
 
-void test_decryptVingereChiper()
+void test_decryptVingereCipher()
 {
 	char text[] = "ABCDABCDABCD";
 	char key[] = "abcd";
 
-	decryptVingereChiper(text, key);
+	decryptVingereCipher(text, key);
 
 	printf(text);
 
 }
 
-void test_encryptDecryptVignereChip()
+void test_encryptDecryptVignereCipher()
 {
 	char text[100], key[100], tmpText[100], newKey[100];
 	printf("Enter text: ");
@@ -56,19 +56,19 @@ void test_encryptDecryptVignereChip()
 	
 	printf("Oryginal: %s\n", text);
 
-	encryptVigenereChiper(text, key);
+	encryptVigenereCipher(text, key);
 	printf("Encrypted: %s\n", text);
 
 	strcpy_s(tmpText, text);
 
-	decryptVingereChiper(text, key);
+	decryptVingereCipher(text, key);
 	printf("Decrypted by key: %s\n", text);
 	
 	printf("Enter new key: ");
 	fflush(stdin);
 	gets_s(newKey);
 
-	decryptVingereChiper(tmpText, newKey);
+	decryptVingereCipher(tmpText, newKey);
 	printf("Decrypted by new key: %s\n", tmpText);
 
 

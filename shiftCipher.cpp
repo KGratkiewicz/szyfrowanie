@@ -1,8 +1,8 @@
 #include <iostream>
 #include <ctype.h>
-#include "shiftChiper.h"
+#include "shiftCipher.h"
 
-void encryptShiftChiper(char* text, int key)
+void encryptShiftCipher(char* text, int key)
 {
     for (int i = 0; text[i]; i++)
     {
@@ -13,7 +13,7 @@ void encryptShiftChiper(char* text, int key)
     }
 }
 
-void decryptShiftChiper(char* text, int key)
+void decryptShiftCipher(char* text, int key)
 {
     for (int i = 0; text[i]; i++)
     {

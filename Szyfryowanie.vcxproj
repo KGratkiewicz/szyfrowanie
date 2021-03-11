@@ -140,18 +140,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="matrixOperations.cpp" />
-    <ClCompile Include="shiftChiper.cpp" />
+    <ClCompile Include="shiftCipher.cpp" />
     <ClCompile Include="stringFormating.cpp" />
     <ClCompile Include="Szyfryowanie.cpp" />
     <ClCompile Include="test.cpp" />
-    <ClCompile Include="VinegereChiper.cpp" />
+    <ClCompile Include="VinegereCipher.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="matrixOperations.h" />
-    <ClInclude Include="shiftChiper.h" />
+    <ClInclude Include="shiftCipher.h" />
     <ClInclude Include="stringFormating.h" />
     <ClInclude Include="test.h" />
-    <ClInclude Include="VinegereChiper.h" />
+    <ClInclude Include="VinegereCipher.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

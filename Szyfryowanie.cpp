@@ -3,7 +3,7 @@
 
 int main()
 {
-    test_encryptDecryptVignereChip();
+    test_encryptDecryptVignereCipher();
 
     return 0;
 }

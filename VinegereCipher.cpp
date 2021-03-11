@@ -1,10 +1,10 @@
 #include <iostream>
 #include <ctype.h>
-#include "VinegereChiper.h"
+#include "VinegereCipher.h"
 #include "matrixOperations.h"
 #include "stringFormating.h"
 
-void encryptVigenereChiper(char* text, char* key)
+void encryptVigenereCipher(char* text, char* key)
 {
 	transformToUpper(text);
 	transformToUpper(key);
@@ -29,11 +29,11 @@ char encryptChar_RetChar(char textChar, char keyChar)
 	int valueTextCharCoordinate = setValueOfCoordinate_RetCoord(textChar);
 	int valueKeyCharCoordinate = setValueOfCoordinate_RetCoord(keyChar);
 
-	char revelantChar = alfabetMatrix[valueTextCharCoordinate][valueKeyCharCoordinate];
+	char relevantChar = alfabetMatrix[valueTextCharCoordinate][valueKeyCharCoordinate];
 
 	alfabetMatrix = freeMatrixOfChar_RetNullptr(alfabetMatrix, 26);
 
-	return revelantChar;
+	return relevantChar;
 
 }
 
@@ -58,7 +58,7 @@ int setValueOfCoordinate_RetCoord(char argChar)
 	return coord;
 }
 
-void decryptVingereChiper(char* text, char* key)
+void decryptVingereCipher(char* text, char* key)
 {
 	transformToUpper(text);
 	transformToUpper(key);
@@ -79,14 +79,14 @@ void decryptVingereChiper(char* text, char* key)
 char decryptChar_RetChar(char textChar, char keyChar)
 {
 	int valueKeyCharCoordinate = setValueOfCoordinate_RetCoord(keyChar);
-	int differenceBetwentextCharkeyChar = textChar - keyChar;
+	int differenceBetwenTextCharKeyChar = textChar - keyChar;
 
-	if (differenceBetwentextCharkeyChar < 0)
-		differenceBetwentextCharkeyChar += 26;
+	if (differenceBetwenTextCharKeyChar < 0)
+		differenceBetwenTextCharKeyChar += 26;
 
-	char revelantChar = 'A' + differenceBetwentextCharkeyChar;
+	char relevantChar = 'A' + differenceBetwenTextCharKeyChar;
 
-	return revelantChar;
+	return relevantChar;
 }
 
 
