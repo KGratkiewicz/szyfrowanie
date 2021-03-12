@@ -8,4 +8,4 @@ void test_decryptVingereCipher();
 void test_encryptDecryptVignereCipher();
 void test_global();
 void test_display();
-
+void test_menuNaviation();

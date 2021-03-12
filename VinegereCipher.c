@@ -16,7 +16,9 @@ void encryptVigenereCipher(char* text, char* key)
 	for (int textIndex = 0, keyIndex = 0; textIndex < textSize; textIndex++, keyIndex++)
 	{
 		if (keyIndex >= keySize)
+		{
 			keyIndex = 0;
+		}			
 		text[textIndex] = encryptChar(text[textIndex], key[keyIndex]);
 	}
 }
@@ -77,8 +79,6 @@ void decryptVingereCipher(char* text, char* key)
 
 char decryptChar(char textChar, char keyChar)
 {
-	
-	int valueKeyCharCoordinate = calculateAplhabetCoord(keyChar);
 	int differenceBetwenTextCharKeyChar = textChar - keyChar;
 
 	if (differenceBetwenTextCharKeyChar < 0)

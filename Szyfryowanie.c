@@ -3,6 +3,6 @@
 
 int main()
 {
-    test_display();
+    test_menuNaviation();
     return 0;
 }

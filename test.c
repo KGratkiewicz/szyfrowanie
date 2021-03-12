@@ -82,8 +82,17 @@ void test_global()
 
 void test_display()
 {
-	displayMainMenu(shiftCipher);
-	system("pause");
-	system("cls");
-	displayMainMenu(VinegreCipher);
+	for (int i = 0; i < opt_exit + 1; i++)
+	{
+		displayMainMenu(i);
+		system("pause");
+		system("cls");
+	}
+	
+
+}
+
+void test_menuNaviation()
+{
+	menuNavigation();
 }
