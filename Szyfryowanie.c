@@ -3,6 +3,6 @@
 
 int main()
 {
-    test_encryptDecryptVignereCipher();
+    test_display();
     return 0;
 }

@@ -3,6 +3,7 @@
 #include "matrixOperations.h"
 #include "VinegereCipher.h"
 #include "global.h"
+#include "menu.h"
 
 void test_allocMatrixOfChar_createVigenerateAlfabet()
 {
@@ -77,4 +78,12 @@ void test_encryptDecryptVignereCipher()
 void test_global()
 {
 	printf("%c %d", FIRST_ALFABET_UPPER_LETTER, ALPHABET_LENGTH);
+}
+
+void test_display()
+{
+	displayMainMenu(shiftCipher);
+	system("pause");
+	system("cls");
+	displayMainMenu(VinegreCipher);
 }

@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="global.c" />
     <ClCompile Include="matrixOperations.c" />
+    <ClCompile Include="menu.c" />
     <ClCompile Include="shiftCipher.c" />
     <ClCompile Include="stringFormating.c" />
     <ClCompile Include="Szyfryowanie.c" />
@@ -150,6 +151,7 @@
   <ItemGroup>
     <ClInclude Include="global.h" />
     <ClInclude Include="matrixOperations.h" />
+    <ClInclude Include="menu.h" />
     <ClInclude Include="shiftCipher.h" />
     <ClInclude Include="stringFormating.h" />
     <ClInclude Include="test.h" />
