@@ -1,4 +1,4 @@
-#include <iostream>
+#include <stdio.h>
 #include <ctype.h>
 #include "VinegereCipher.h"
 #include "matrixOperations.h"
@@ -23,7 +23,7 @@ void encryptVigenereCipher(char* text, char* key)
 
 char encryptChar(char textChar, char keyChar)
 {
-	char** alfabetMatrix = allocMatrixOfChar(alphabetLength, alphabetLength);
+	char** alfabetMatrix = allocMatrixOfChar(ALPHABET_LENGTH, ALPHABET_LENGTH);
 	createVigenereAlfabetMatix(alfabetMatrix);
 
 	int textCharCoordinate = calculateAplhabetCoord(textChar);
@@ -31,7 +31,7 @@ char encryptChar(char textChar, char keyChar)
 
 	char relevantChar = alfabetMatrix[textCharCoordinate][keyCharCoordinate];
 
-	freeMatrixOfChar(alfabetMatrix, alphabetLength);
+	freeMatrixOfChar(alfabetMatrix, ALPHABET_LENGTH);
 
 	return relevantChar;
 
@@ -39,13 +39,13 @@ char encryptChar(char textChar, char keyChar)
 
 void createVigenereAlfabetMatix(char** alfabetMatrix)
 {
-	for (int i = 0; i < alphabetLength; i++)
+	for (int i = 0; i < ALPHABET_LENGTH; i++)
 	{
-		for (int j = 0; j < alphabetLength; j++)
+		for (int j = 0; j < ALPHABET_LENGTH; j++)
 		{
 			if (alfabetMatrix)
 			{
-				char revelantChar = (j + i) % alphabetLength + firstAlfabetUpperLetter;
+				char revelantChar = (j + i) % ALPHABET_LENGTH + FIRST_ALFABET_UPPER_LETTER;
 				alfabetMatrix[i][j] = revelantChar;
 			}
 		}
@@ -54,7 +54,7 @@ void createVigenereAlfabetMatix(char** alfabetMatrix)
 
 int calculateAplhabetCoord(char argChar)
 {
-	return (argChar - firstAlfabetUpperLetter) % alphabetLength;
+	return (argChar - FIRST_ALFABET_UPPER_LETTER) % ALPHABET_LENGTH;
 }
 
 void decryptVingereCipher(char* text, char* key)
@@ -82,9 +82,9 @@ char decryptChar(char textChar, char keyChar)
 	int differenceBetwenTextCharKeyChar = textChar - keyChar;
 
 	if (differenceBetwenTextCharKeyChar < 0)
-		differenceBetwenTextCharKeyChar += alphabetLength;
+		differenceBetwenTextCharKeyChar += ALPHABET_LENGTH;
 
-	return  firstAlfabetUpperLetter + differenceBetwenTextCharKeyChar;
+	return  FIRST_ALFABET_UPPER_LETTER + differenceBetwenTextCharKeyChar;
 }
 
 

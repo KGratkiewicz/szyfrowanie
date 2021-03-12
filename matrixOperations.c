@@ -1,27 +1,25 @@
-#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
 #include "matrixOperations.h"
-
-using namespace std;
 
 char** allocMatrixOfChar(int width, int height)
 {
-	char** matrix = new char* [height];
+	char** matrix = (char**)calloc(height, sizeof(char*));
 	for (int i = 0; i < height; i++)
 	{
-		matrix[i] = new char[width];
+		matrix[i] = (char*)calloc(width, sizeof(char));
 	}
 	return matrix;
 
 }
 
-char** freeMatrixOfChar(char** matrix, int height)
+void freeMatrixOfChar(char** matrix, int height)
 {
 	for (int i = 0; i < height; i++)
 	{
-		delete[] matrix[i];
+		free (matrix[i]);
 	}
-	delete[] matrix;
-	return nullptr;
+	free(matrix);
 }
 
 void printMatrixOfChar(char** matrix, int width, int height)
@@ -30,8 +28,8 @@ void printMatrixOfChar(char** matrix, int width, int height)
 	{
 		for (int j = 0; j < height; j++)
 		{
-			cout << matrix[i][j];
+			printf("%c",matrix[i][j]);
 		}
-		cout << endl;
+		printf("\n");
 	}
 }

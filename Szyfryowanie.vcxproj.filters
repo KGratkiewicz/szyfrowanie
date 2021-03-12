@@ -15,22 +15,25 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Szyfryowanie.cpp">
+    <ClCompile Include="VinegereCipher.c">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="matrixOperations.cpp">
+    <ClCompile Include="test.c">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="stringFormating.cpp">
+    <ClCompile Include="Szyfryowanie.c">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="test.cpp">
+    <ClCompile Include="stringFormating.c">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="VinegereCipher.cpp">
+    <ClCompile Include="shiftCipher.c">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="shiftCipher.cpp">
+    <ClCompile Include="matrixOperations.c">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="global.c">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
   </ItemGroup>

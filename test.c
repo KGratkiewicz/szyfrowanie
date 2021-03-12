@@ -1,5 +1,5 @@
-#include <iostream>
-#include <cstring>
+#include <stdio.h>
+#include <string.h>
 #include "matrixOperations.h"
 #include "VinegereCipher.h"
 #include "global.h"
@@ -9,7 +9,7 @@ void test_allocMatrixOfChar_createVigenerateAlfabet()
 	char** matrix = allocMatrixOfChar(26, 26);
 	createVigenereAlfabetMatix(matrix);
 	printMatrixOfChar(matrix, 26, 26);
-	matrix = freeMatrixOfChar(matrix, 26);
+	freeMatrixOfChar(matrix, 26);
 }
 
 void test_encryptVigenereCipher()
@@ -50,24 +50,24 @@ void test_encryptDecryptVignereCipher()
 	char text[100], key[100], tmpText[100], newKey[100];
 	printf("Enter text: ");
 	fflush(stdin);
-	gets_s(text);
+	gets(text);
 	printf("Enter key: ");
 	fflush(stdin);
-	gets_s(key);
+	gets(key);
 
 	printf("Oryginal: %s\n", text);
 
 	encryptVigenereCipher(text, key);
 	printf("Encrypted: %s\n", text);
 
-	strcpy_s(tmpText, text);
+	strcpy_s(tmpText, strlen(text)+1, text);
 
 	decryptVingereCipher(text, key);
 	printf("Decrypted by key: %s\n", text);
 
 	printf("Enter new key: ");
 	fflush(stdin);
-	gets_s(newKey);
+	gets(newKey);
 
 	decryptVingereCipher(tmpText, newKey);
 	printf("Decrypted by new key: %s\n", tmpText);
@@ -76,5 +76,5 @@ void test_encryptDecryptVignereCipher()
 
 void test_global()
 {
-	printf("%c %d", firstAlfabetUpperLetter, alphabetLength);
+	printf("%c %d", FIRST_ALFABET_UPPER_LETTER, ALPHABET_LENGTH);
 }

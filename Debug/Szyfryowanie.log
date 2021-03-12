@@ -1,2 +1,8 @@
-﻿  shiftCipher.cpp
+﻿  global.c
+  shiftCipher.c
+  test.c
+D:\Visual Studio\repos D\Krypto\Szyfryowanie\Szyfryowanie\test.c(53,6): warning C4013: niezdefiniowany "gets"; przy założeniu, że extern zwraca int
+  VinegereCipher.c
+D:\Visual Studio\repos D\Krypto\Szyfryowanie\Szyfryowanie\VinegereCipher.c(13,23): warning C4013: niezdefiniowany "strlen"; przy założeniu, że extern zwraca int
+  Generowanie kodu...
   Szyfryowanie.vcxproj -> D:\Visual Studio\repos D\Krypto\Szyfryowanie\Debug\Szyfryowanie.exe
