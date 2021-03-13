@@ -139,6 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="fileOperations.c" />
     <ClCompile Include="global.c" />
     <ClCompile Include="matrixOperations.c" />
     <ClCompile Include="menu.c" />
@@ -149,6 +150,7 @@
     <ClCompile Include="VinegereCipher.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="fileOperatins.h" />
     <ClInclude Include="global.h" />
     <ClInclude Include="matrixOperations.h" />
     <ClInclude Include="menu.h" />

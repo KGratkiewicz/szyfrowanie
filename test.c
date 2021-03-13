@@ -96,3 +96,18 @@ void test_menuNaviation()
 {
 	menuNavigation();
 }
+
+void test_ascii()
+{
+	for (int i = 10; i != 'a'; )
+	{
+		i = getch();
+		printf(" %d", i);
+	}
+}
+
+void test_openToWrite()
+{
+	openFileToWrite("test.txt");
+
+}

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdbool.h>
 #include <ctype.h>
 #include "VinegereCipher.h"
 #include "matrixOperations.h"
@@ -7,7 +8,6 @@
 
 void encryptVigenereCipher(char* text, char* key)
 {
-	transformToUpper(text);
 	transformToUpper(key);
 
 	int textSize = strlen(text);
@@ -28,12 +28,24 @@ char encryptChar(char textChar, char keyChar)
 	char** alfabetMatrix = allocMatrixOfChar(ALPHABET_LENGTH, ALPHABET_LENGTH);
 	createVigenereAlfabetMatix(alfabetMatrix);
 
+	bool textIsLower = false;
+	if (islower(textChar))
+	{
+		textChar = toupper(textChar);
+		textIsLower = true;
+	}
+
 	int textCharCoordinate = calculateAplhabetCoord(textChar);
 	int keyCharCoordinate = calculateAplhabetCoord(keyChar);
 
 	char relevantChar = alfabetMatrix[textCharCoordinate][keyCharCoordinate];
 
 	freeMatrixOfChar(alfabetMatrix, ALPHABET_LENGTH);
+
+	if (textIsLower)
+	{
+		relevantChar = tolower(relevantChar);
+	}
 
 	return relevantChar;
 
@@ -61,7 +73,6 @@ int calculateAplhabetCoord(char argChar)
 
 void decryptVingereCipher(char* text, char* key)
 {
-	transformToUpper(text);
 	transformToUpper(key);
 
 	int textSize = strlen(text);
@@ -79,12 +90,26 @@ void decryptVingereCipher(char* text, char* key)
 
 char decryptChar(char textChar, char keyChar)
 {
+	bool textIsLower = false;
+	if (islower(textChar))
+	{
+		textChar = toupper(textChar);
+		textIsLower = true;
+	}
+
 	int differenceBetwenTextCharKeyChar = textChar - keyChar;
 
 	if (differenceBetwenTextCharKeyChar < 0)
 		differenceBetwenTextCharKeyChar += ALPHABET_LENGTH;
 
-	return  FIRST_ALFABET_UPPER_LETTER + differenceBetwenTextCharKeyChar;
+	char relevantChar = FIRST_ALFABET_UPPER_LETTER + differenceBetwenTextCharKeyChar;
+
+	if (textIsLower)
+	{
+		relevantChar = tolower(relevantChar);
+	}
+
+	return  relevantChar;
 }
 
 

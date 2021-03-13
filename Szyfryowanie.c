@@ -3,6 +3,6 @@
 
 int main()
 {
-    test_menuNaviation();
+    test_openToWrite();
     return 0;
 }

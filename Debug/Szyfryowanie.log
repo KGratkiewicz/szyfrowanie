@@ -1,3 +1,4 @@
-﻿  menu.c
-D:\Visual Studio\repos D\Krypto\Szyfryowanie\Szyfryowanie\menu.c(57,50): warning C4013: niezdefiniowany "getch"; przy założeniu, że extern zwraca int
+﻿  fileOperations.c
+D:\Visual Studio\repos D\Krypto\Szyfryowanie\Szyfryowanie\fileOperations.c(9,1): warning C4029: zadeklarowana formalna lista parametrów różniąca się od definicji
+D:\Visual Studio\repos D\Krypto\Szyfryowanie\Szyfryowanie\fileOperations.c(53,21): warning C4013: niezdefiniowany "getch"; przy założeniu, że extern zwraca int
   Szyfryowanie.vcxproj -> D:\Visual Studio\repos D\Krypto\Szyfryowanie\Debug\Szyfryowanie.exe

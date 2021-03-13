@@ -8,7 +8,7 @@
 void displayMainMenu(enum menuOption option)
 {
 	printf("-----------------------------------------------------\n");
-	printf("|---------------------- MENU -----------------------|\n");
+	printf("|                       MENU                        |\n");
 	printf("|---------------------------------------------------|\n");
 	if (option == opt_shiftCipher)
 	{
@@ -37,11 +37,11 @@ void displayMainMenu(enum menuOption option)
 	printf("-----------------------------------------------------\n");
 }
 
-void displaySelectedOption(const char* text)
+void displaySelectedOption(const char* TEXT)
 {
 	HANDLE hOut = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(hOut, BACKGROUND_GREEN);
-	printf(text);
+	printf(TEXT);
 	SetConsoleTextAttribute(hOut, COLOR_BACKGROUND);
 	SetConsoleTextAttribute(hOut, WHITE);
 }
@@ -88,3 +88,4 @@ void execute(enum menuOption chosenOption)
 		break;
 	}
 }
+
