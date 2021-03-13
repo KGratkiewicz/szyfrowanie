@@ -111,3 +111,8 @@ void test_openToWrite()
 	openFileToWrite("test.txt");
 
 }
+
+void test_encryptFileByVinegre()
+{
+	encryptFileByVinegre("test.txt", "resoult.txt", "KRYPTO");
+}

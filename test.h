@@ -11,4 +11,4 @@ void test_display();
 void test_menuNaviation();
 void test_ascii();
 void test_openToWrite();
-
+void encryptFileByVinegre();

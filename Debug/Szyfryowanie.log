@@ -1,4 +1,10 @@
-﻿  fileOperations.c
-D:\Visual Studio\repos D\Krypto\Szyfryowanie\Szyfryowanie\fileOperations.c(9,1): warning C4029: zadeklarowana formalna lista parametrów różniąca się od definicji
-D:\Visual Studio\repos D\Krypto\Szyfryowanie\Szyfryowanie\fileOperations.c(53,21): warning C4013: niezdefiniowany "getch"; przy założeniu, że extern zwraca int
+﻿  Szyfryowanie.c
+  fileOperations.c
+D:\Visual Studio\repos D\Krypto\Szyfryowanie\Szyfryowanie\fileOperations.c(17,22): warning C4013: niezdefiniowany "strlen"; przy założeniu, że extern zwraca int
+D:\Visual Studio\repos D\Krypto\Szyfryowanie\Szyfryowanie\fileOperations.c(18,43): warning C4473: „fscanf_s”: przekazano niewystarczającą liczbę argumentów dla ciągu formatowania
+D:\Visual Studio\repos D\Krypto\Szyfryowanie\Szyfryowanie\fileOperations.c(18,43): message : symbole zastępcze i ich parametry oczekują 2 argumentów ze zmienną liczbą argumentów, ale podano następującą liczbę zmiennych argumentów: 1
+D:\Visual Studio\repos D\Krypto\Szyfryowanie\Szyfryowanie\fileOperations.c(18,43): message : brakujący argument 2 o zmiennej liczbie parametrów jest wymagany w ciągu formatu „%c”
+D:\Visual Studio\repos D\Krypto\Szyfryowanie\Szyfryowanie\fileOperations.c(18,43): message : ten argument jest używany jako rozmiar bufora
+D:\Visual Studio\repos D\Krypto\Szyfryowanie\Szyfryowanie\fileOperations.c(80,21): warning C4013: niezdefiniowany "getch"; przy założeniu, że extern zwraca int
+  Generowanie kodu...
   Szyfryowanie.vcxproj -> D:\Visual Studio\repos D\Krypto\Szyfryowanie\Debug\Szyfryowanie.exe

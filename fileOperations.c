@@ -1,15 +1,42 @@
 #include <stdio.h>
 #include <stdbool.h>
 #include "fileOperatins.h"
+#include "VinegereCipher.h"
+#include "stringFormating.h"
 
 #define ENTER 13
 #define ESC 27
+#define SPACE 32
 
-void encryptFileByVinegre(const char* SOURCE_FILE_NAME, const char* RESOULT_FILE_NAME)
+void encryptFileByVinegre(const char* SOURCE_FILE_NAME, const char* RESOULT_FILE_NAME, char* key)
 {
 	FILE* sourceFile = openFileToRead(SOURCE_FILE_NAME, true);
 	FILE* resoultFile = openFileToWrite(RESOULT_FILE_NAME);
+
+	char fileChar;
+	int keySize = strlen(key);
+	for (int keyIndex=0;fscanf_s(sourceFile, "%c", &fileChar)!=EOF; keyIndex++)
+	{
+		if (keyIndex >= keySize)
+		{
+			keyIndex = 0;
+		}
+
+		if (isLetter(fileChar))
+		{
+			char encryptedChar = encryptChar(fileChar, key[keyIndex]);
+			fprintf(resoultFile, "%c", encryptedChar);
+		}
+		else
+		{
+			fprintf(resoultFile, "%c", fileChar);
+			keyIndex--;
+		}
+		
+	}
 	
+	fclose(sourceFile);
+	fclose(resoultFile);
 }
 
 FILE* openFileToRead(const char* FILE_NAME, bool displayErrors)
