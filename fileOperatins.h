@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include <stdbool.h>
 void encryptFileByVinegre(const char* SOURCE_FILE_NAME, const char* RESOULT_FILE_NAME, char* key);
 FILE* openFileToRead(const char* FILE_NAME, bool displayErrors);
 FILE* openFileToWrite(const char* FILE_NAME);

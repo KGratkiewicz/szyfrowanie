@@ -4,6 +4,7 @@
 #include "VinegereCipher.h"
 #include "global.h"
 #include "menu.h"
+#include "fileOperatins.h"
 
 void test_allocMatrixOfChar_createVigenerateAlfabet()
 {
@@ -94,7 +95,7 @@ void test_display()
 
 void test_menuNaviation()
 {
-	menuNavigation();
+	mainMenuNavigation();
 }
 
 void test_ascii()

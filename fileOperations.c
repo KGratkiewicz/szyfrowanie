@@ -6,7 +6,6 @@
 
 #define ENTER 13
 #define ESC 27
-#define SPACE 32
 
 void encryptFileByVinegre(const char* SOURCE_FILE_NAME, const char* RESOULT_FILE_NAME, char* key)
 {
