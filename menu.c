@@ -6,7 +6,8 @@
 #include "stringFormating.h"
 #include "fileOperatins.h"
 
-#define	 WHITE 15
+#define	WHITE 15
+#define MAX_BUFFER_SIZE 256
 
 void displayMainMenu(enum mainMenuOption option)
 {
@@ -185,7 +186,7 @@ void encryptFile(enum mainMenuOption cipherChosen)
 	switch (cipherChosen)
 	{
 	case opt_shiftCipher:
-
+		ShiftEncryptOption();
 		break;
 	case opt_VinegreCipher:
 		VinegreEncryptOption();
@@ -211,19 +212,50 @@ void decryptFile(enum mainMenuOption cipherChosen)
 
 void VinegreEncryptOption()
 {
-	char sourceFileName[256];
-	char key[256];
-	char resoultFileName[256];
+	char sourceFileName[MAX_BUFFER_SIZE];
+	char key[MAX_BUFFER_SIZE];
+	char resoultFileName[MAX_BUFFER_SIZE];
 
+	fflush(stdin);
 	printf("Insert source file name: ");
-	gets(sourceFileName);
-
-	printf("Insert key: ");
-	gets(key);
-	transformToUpper(key);
+	fgets(sourceFileName, MAX_BUFFER_SIZE, stdin);
+	sourceFileName[strlen(sourceFileName) - 1] = 0;
 	
+	fflush(stdin);
 	printf("Insert resoult file name: ");
-	gets(resoultFileName);
+	fgets(resoultFileName, MAX_BUFFER_SIZE, stdin);
+	resoultFileName[strlen(resoultFileName) - 1] = 0;
+
+	fflush(stdin);
+	printf("Insert key: ");
+	fgets(key, MAX_BUFFER_SIZE, stdin);
+	key[strlen(key) - 1] = 0;
+	transformToUpper(key);
 
 	encryptFileByVinegre(sourceFileName, resoultFileName, key);
+}
+
+void ShiftEncryptOption()
+{
+	char sourceFileName[MAX_BUFFER_SIZE];
+	int key;
+	char resoultFileName[MAX_BUFFER_SIZE];
+
+	fflush(stdin);
+	printf("Insert source file name: ");
+	fgets(sourceFileName, MAX_BUFFER_SIZE, stdin);
+	sourceFileName[strlen(sourceFileName) - 1] = 0;
+
+	fflush(stdin);
+	printf("Insert resoult file name: ");
+	fgets(resoultFileName, MAX_BUFFER_SIZE, stdin);
+	resoultFileName[strlen(resoultFileName) - 1] = 0;
+
+	printf("Insert key: ");
+	scanf_s(" %d", &key);
+
+
+	
+
+	encryptFileByShift(sourceFileName, resoultFileName, key);
 }

@@ -109,7 +109,7 @@ void test_ascii()
 
 void test_openToWrite()
 {
-	openFileToWrite("test.txt");
+	openFileToWrite("test.txt", true);
 
 }
 
