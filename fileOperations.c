@@ -147,3 +147,72 @@ void encryptFileByShift(const char* SOURCE_FILE_NAME, const char* RESOULT_FILE_N
 	}
 
 }
+
+void decryptFileByVinegre(const char* SOURCE_FILE_NAME, const char* RESOULT_FILE_NAME, char* key)
+{
+	FILE* sourceFile = openFileToRead(SOURCE_FILE_NAME, true);
+	if (sourceFile)
+	{
+		FILE* resoultFile = openFileToWrite(RESOULT_FILE_NAME, true);
+		if (resoultFile)
+		{
+			char fileChar;
+			int keySize = strlen(key);
+			for (int keyIndex = 0; fscanf_s(sourceFile, "%c", &fileChar) != EOF; keyIndex++)
+			{
+				if (keyIndex >= keySize)
+				{
+					keyIndex = 0;
+				}
+
+				if (isLetter(fileChar))
+				{
+					char encryptedChar = decryptChar(fileChar, key[keyIndex]);
+					fprintf(resoultFile, "%c", encryptedChar);
+				}
+				else
+				{
+					fprintf(resoultFile, "%c", fileChar);
+					keyIndex--;
+				}
+
+			}
+			printf("Decryption succes: %s -> %s.\n", SOURCE_FILE_NAME, RESOULT_FILE_NAME);
+			system("pause");
+
+			fclose(resoultFile);
+		}
+
+		fclose(sourceFile);
+
+	}
+
+}
+
+void decryptFileByShift(const char* SOURCE_FILE_NAME, const char* RESOULT_FILE_NAME, int key)
+{
+	FILE* sourceFile = openFileToRead(SOURCE_FILE_NAME, true);
+	if (sourceFile)
+	{
+		FILE* resoultFile = openFileToWrite(RESOULT_FILE_NAME, true);
+		if (resoultFile)
+		{
+			char fileString[MAX_BUFFER_SIZE];
+			while (fgets(fileString, MAX_BUFFER_SIZE, sourceFile))
+			{
+
+				decryptShiftCipher(fileString, key);
+
+				fprintf(resoultFile, "%s", fileString);
+			}
+			printf("Encryption succes: %s -> %s.\n", SOURCE_FILE_NAME, RESOULT_FILE_NAME);
+			system("pause");
+
+			fclose(resoultFile);
+		}
+
+		fclose(sourceFile);
+
+	}
+
+}

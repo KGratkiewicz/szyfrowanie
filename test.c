@@ -117,3 +117,8 @@ void test_encryptFileByVinegre()
 {
 	encryptFileByVinegre("test.txt", "resoult.txt", "KRYPTO");
 }
+
+void test_modulo()
+{
+	printf("%d", (-1 % 26));
+}

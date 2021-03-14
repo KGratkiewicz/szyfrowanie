@@ -174,7 +174,7 @@ void executeCipherMenuOption(enum cipherMenuOption chosenOption, enum mainMenuOp
 		encryptFile(cipherChosen);
 		break;
 	case opt_decrypt:
-
+		decryptFile(cipherChosen);
 		break;
 	default:
 		break;
@@ -186,10 +186,10 @@ void encryptFile(enum mainMenuOption cipherChosen)
 	switch (cipherChosen)
 	{
 	case opt_shiftCipher:
-		ShiftEncryptOption();
+		ShiftOption(opt_encrypt);
 		break;
 	case opt_VinegreCipher:
-		VinegreEncryptOption();
+		VinegreOption(opt_encrypt);
 		break;
 	default:
 		break;
@@ -201,8 +201,10 @@ void decryptFile(enum mainMenuOption cipherChosen)
 	switch (cipherChosen)
 	{
 	case opt_shiftCipher:
+		ShiftOption(opt_decrypt);
 		break;
 	case opt_VinegreCipher:
+		VinegreOption(opt_decrypt);
 		break;
 	default:
 		break;
@@ -210,7 +212,7 @@ void decryptFile(enum mainMenuOption cipherChosen)
 
 }
 
-void VinegreEncryptOption()
+void VinegreOption(enum cipherMenuOption cipherOption)
 {
 	char sourceFileName[MAX_BUFFER_SIZE];
 	char key[MAX_BUFFER_SIZE];
@@ -232,10 +234,21 @@ void VinegreEncryptOption()
 	key[strlen(key) - 1] = 0;
 	transformToUpper(key);
 
-	encryptFileByVinegre(sourceFileName, resoultFileName, key);
+	switch (cipherOption)
+	{
+	case opt_encrypt:
+		encryptFileByVinegre(sourceFileName, resoultFileName, key);
+		break;
+	case opt_decrypt:
+		decryptFileByVinegre(sourceFileName, resoultFileName, key);
+		break;
+	default:
+		break;
+	}
+
 }
 
-void ShiftEncryptOption()
+void ShiftOption(enum cipherMenuOption cipherOption)
 {
 	char sourceFileName[MAX_BUFFER_SIZE];
 	int key;
@@ -251,11 +264,21 @@ void ShiftEncryptOption()
 	fgets(resoultFileName, MAX_BUFFER_SIZE, stdin);
 	resoultFileName[strlen(resoultFileName) - 1] = 0;
 
+	fflush(stdin);
 	printf("Insert key: ");
 	scanf_s(" %d", &key);
+	getchar();
 
-
-	
-
-	encryptFileByShift(sourceFileName, resoultFileName, key);
+	switch (cipherOption)
+	{
+	case opt_encrypt:
+		encryptFileByShift(sourceFileName, resoultFileName, key);
+		break;
+	case opt_decrypt:
+		decryptFileByShift(sourceFileName, resoultFileName, key);
+		break;
+	default:
+		break;
+	}
 }
+

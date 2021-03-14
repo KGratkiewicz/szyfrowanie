@@ -12,3 +12,4 @@ void test_menuNaviation();
 void test_ascii();
 void test_openToWrite();
 void test_encryptFileByVinegre();
+void test_modulo();

@@ -12,5 +12,5 @@ void executeMainMenuOption(enum mainMenuOption);
 void executeCipherMenuOption(enum cipherMenuOption, enum mainMenuOption);
 void encryptFile(enum mainMenuOption);
 void decryptFile(enum mainMenuOption);
-void VinegreEncryptOption();
-void ShiftEncryptOption();
+void VinegreOption(enum cipherMenuOption cipherOption);
+void ShiftOption(enum cipherMenuOption cipherOption);
