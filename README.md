@@ -1,6 +1,10 @@
 # Szyfrowanie
 Projekt ku czci dobrego kodu. Pierwsze podejście do programowania po przeczytaniu książki "Clean Code" Roberta C. Martina. 
 
+### Środowisko 
+IDE: [Visual Studio](https://visualstudio.microsoft.com/pl/)
+
+
 ## Nawigacja menu za pomocą strzałek menu.h/.c
 Chyba najciekawszy fragment kodu programu - pomysł własny.
 ```
