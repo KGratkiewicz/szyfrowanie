@@ -1,8 +1,8 @@
 # Szyfrowanie
 Projekt ku czci dobrego kodu. Pierwsze podejście do programowania po przeczytaniu książki "Clean Code" Roberta C. Martina. 
 
-# Nawigacja menu za pomocą strzałek menu.h/.c
-
+## Nawigacja menu za pomocą strzałek menu.h/.c
+Chyba najciekawszy fragment kodu programu - pomysł własny.
 ```
 void mainMenuNavigation()
 {
@@ -35,3 +35,6 @@ void mainMenuNavigation()
 
 Nie jest on bezbłędny - pozostanie zapewne porzucony, ale oby nie zapomniany.
 `+ do doświadczenia` `+ do kreatywności`
+
+***
+&copy; Jakub Grątkiewicz
