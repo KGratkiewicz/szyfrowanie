@@ -2,7 +2,7 @@
 Projekt ku czci dobrego kodu. Pierwsze podejście do programowania po przeczytaniu książki "Clean Code" Roberta C. Martina. 
 
 ### Środowisko 
-IDE: [Visual Studio](https://visualstudio.microsoft.com/pl/)
+Program stworzony za pomocą IDE udostępnianego przez [Microsoft](https://www.microsoft.com/pl-pl?SilentAuth=1&wa=wsignin1.0) -> [Visual Studio](https://visualstudio.microsoft.com/pl/)
 
 
 ## Nawigacja menu za pomocą strzałek menu.h/.c
