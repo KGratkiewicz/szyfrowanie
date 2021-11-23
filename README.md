@@ -5,7 +5,7 @@ Projekt ku czci dobrego kodu. Pierwsze podejście do programowania po przeczytan
 Program stworzony za pomocą IDE udostępnianego przez [Microsoft](https://www.microsoft.com/pl-pl?SilentAuth=1&wa=wsignin1.0) -> [Visual Studio](https://visualstudio.microsoft.com/pl/)
 
 
-## Nawigacja menu za pomocą strzałek menu.h/.c
+## Nawigacja menu za pomocą strzałek -> menu.h/.c
 Chyba najciekawszy fragment kodu programu - pomysł własny.
 ```
 void mainMenuNavigation()
